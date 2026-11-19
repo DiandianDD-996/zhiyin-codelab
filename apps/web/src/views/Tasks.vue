@@ -246,8 +246,9 @@ async function createStudent() {
 }
 </script>
 <template>
-  <div class="page-heading" :class="{ 'student-task-heading': s.user?.role !== 'teacher' }">
+  <div class="page-heading evidence-heading" :class="{ 'student-task-heading': s.user?.role !== 'teacher' }">
     <div>
+      <small class="register-label">Practicum / 项目档案</small>
       <h1>实训任务</h1>
       <p class="muted">
         {{

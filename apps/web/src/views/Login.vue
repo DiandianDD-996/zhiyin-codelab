@@ -91,7 +91,7 @@ const handleLogin = async () => {
       <section class="login-card gl-glass gl-glass--strong" aria-labelledby="login-title">
         <p class="gl-eyebrow">Sign in</p>
         <h1 id="login-title">欢迎使用 CodeLab</h1>
-        <p class="login-subtitle">登录，继续你的项目与实训。</p>
+        <p class="login-subtitle">{{ visualRole === 'teacher' ? '查看学生提交的版本，核对证据后发布反馈。' : '继续你的作业，查看对应版本的教师反馈。' }}</p>
         <div class="gl-segmented roles" role="group" aria-label="身份外观" :style="{ '--n': 2, '--i': visualRole === 'teacher' ? 0 : 1 }">
           <span class="gl-segmented__pill" aria-hidden="true"></span>
           <button type="button" :aria-pressed="visualRole === 'teacher'" @click="setVisualRole('teacher')">教师</button>

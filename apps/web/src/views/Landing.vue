@@ -25,7 +25,7 @@ let slot=0;
 function onEmit(){liquid.value?.pulse();selectedCase.value=(selectedCase.value+1)%cases.length;slots.value[slot]=selectedCase.value;slot=(slot+1)%slots.value.length;}
 const steps=[
   ['提交','Submit','学生上传 ZIP，或从片段、文件夹、Gitee、GitHub 固定一次课程成果快照。提交即留档，不依赖模型。'],
-  ['执行','Execute','固定 Vue 模板在隔离环境里构建、启动，驱动真实浏览器，八个独立案例留下截图与日志。'],
+  ['检查','Check','普通项目保持静态阅读。仅获准的固定 Vue 模板样本进入受控执行环境，由浏览器检查并留下截图与日志。'],
   ['整理','Agent','受限 Agent 使用六种工具阅读证据，整理出可追溯到源码行的反馈候选。'],
   ['复核','Review','教师逐条采用、修改或驳回。模型只给候选，发布权始终在教师手里。'],
   ['复提','Compare','学生按反馈修改后再次提交，两次证据并排比较，看清修改带来的变化。'],
@@ -55,8 +55,8 @@ onBeforeUnmount(()=>{removeEventListener('scroll',syncScroll);removeEventListene
     <section id="hero" class="hero">
       <GlLiquid ref="liquid" :anchor="coreEl" /><div class="hero-shade" aria-hidden="true"></div><GlEvidenceCore :anchor="coreEl" :avoid="copyEl" @emit="onEmit" />
       <div class="hero-inner"><div ref="copyEl" class="hero-copy">
-        <p class="gl-eyebrow">Vue 实训 · 证据驱动验收平台</p><h1 v-gl-split="450">让每一次提交<br />都有<em>证据</em>可循</h1><p class="hero-en gl-serif">Evidence, not guesses.</p>
-        <p class="hero-lede">教师定义检查要求，学生提交 ZIP；执行侧在隔离环境里构建、驱动真实浏览器并留下证据，Agent 整理成可追溯到源码行的反馈，教师逐条复核后发布，再看清下一次提交进步在哪里。</p>
+        <p class="gl-eyebrow">编程实训 · 提交与评阅工作台</p><h1>知因 <em>CodeLab</em></h1><p class="hero-en gl-serif">每条评语，都有代码可查。</p>
+        <p class="hero-lede">学生提交固定版本，教师从反馈定位到当时的代码行，核对后再发布。普通项目只读源码；受控模板才运行浏览器检查。</p>
         <div class="hero-actions"><RouterLink to="/" class="gl-btn gl-btn--primary gl-btn--lg">进入工作台 <ArrowRight :size="18" aria-hidden="true" /></RouterLink><a href="#flow" class="gl-btn gl-btn--ghost">看它如何工作</a></div>
         <ul class="hero-meta"><li><b>8</b><span>独立检查案例</span></li><li><b>5</b><span>项核心要求</span></li><li><b>0</b><span>条自动发布</span></li></ul>
       </div><div class="hero-visual" aria-label="检查核心与证据卡示意"><div ref="coreEl" class="core-anchor" aria-hidden="true"></div><p class="core-label gl-mono">示意 · {{caseLabel}}</p>

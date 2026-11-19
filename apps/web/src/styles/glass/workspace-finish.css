@@ -1,4 +1,19 @@
 /* Glass Lab finish: familiar controls, quiet materials and stable reading space. */
+.workspace .evidence-heading {
+  position: relative; padding: 20px 22px 20px 26px; margin-bottom: 22px;
+  border: 1px solid var(--gl-line); border-inline-start: 4px solid var(--gl-c1);
+  border-radius: 4px 8px 8px 4px; background: var(--gl-bg-2);
+}
+.workspace .evidence-heading .register-label {
+  display:block; margin-bottom:6px; font:600 12px/1.4 ui-monospace,monospace;
+  color:var(--gl-c1); letter-spacing:0;
+}
+.workspace .sidebar .nav-item[aria-current=page] { box-shadow:inset 3px 0 var(--gl-c1); font-weight:700; }
+.workspace .mobile-workspace-nav a[aria-current=page] { box-shadow:inset 0 -2px var(--gl-c1); }
+.login-page .login-card .login-subtitle { border-inline-start:2px solid var(--gl-c1); padding-inline-start:12px; }
+@media (max-width:640px) {
+  .workspace .evidence-heading { padding:14px 14px 14px 16px; margin-bottom:14px; }
+}
 .workspace .topbar { min-height: var(--banner-height); padding-block: var(--space-2xs); align-items: center; }
 .workspace .topbar-path { min-width: 0; flex-wrap: wrap; gap: var(--space-2xs); }
 .workspace .topbar-path a { flex-shrink: 0; }
