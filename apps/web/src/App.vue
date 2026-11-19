@@ -51,6 +51,7 @@ onBeforeUnmount(() => window.removeEventListener('scroll', syncScrolled));
       <button class="primary" :disabled="s.loading" @click="s.load()">
         {{ s.loading ? '正在重试…' : '重试连接' }}
       </button>
+      <RouterLink to="/welcome">浏览项目介绍</RouterLink>
     </section>
   </main>
   <Login v-else-if="!s.user" embedded />

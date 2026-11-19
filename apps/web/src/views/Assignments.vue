@@ -118,10 +118,11 @@ onMounted(load);
 </script>
 <template>
   <section class="course-page assignments-page" aria-label="课程作业">
-    <header class="course-heading">
+    <header class="course-heading evidence-heading">
       <div>
+        <small class="register-label">Coursework / 版本档案</small>
         <h1><BookOpen :size="26" aria-hidden="true" />课程作业</h1>
-        <p class="muted">函数、文件或一组连续子任务，各自保留提交版本与评价。</p>
+        <p class="muted">{{ teacher ? '布置任务，核对提交版本，发布本次评价。' : '提交本次作业，在对应版本中查看教师反馈。' }}</p>
       </div>
       <button v-if="teacher && enabled" class="primary" :aria-expanded="show" aria-controls="assignment-create" @click="show = !show">
         <Plus :size="18" aria-hidden="true" />创建作业
